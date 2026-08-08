@@ -31,7 +31,7 @@
       width: 100%;
     }
 
-    /* 상단 로고 배경 */
+    /* 상단 헤더 로고 배경 */
     header .logo {
       display: inline-block;
       width: 180px;
@@ -42,27 +42,27 @@
       background-repeat: no-repeat;
     }
 
-    /* 히어로 섹션 로고 배경 */
+    /* 히어로 섹션 로고 배경 (크기 및 비율 정상화) */
     .hero-content .logo-wrap {
-      width: 220px;
-      height: 60px;
-      margin: 0 auto 20px;
+      width: 280px;
+      height: 90px;
+      margin: 0 auto 25px;
       background-image: url('logo.png');
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* 갤러리 이미지들을 배경 이미지 박스로 정의 */
-    .img-box-1 { background-image: url('img1_web.jpg'); height: 100%; min-height: 450px; }
-    .img-box-2 { background-image: url('img5_web.jpg'); height: 280px; }
-    .img-box-3 { background-image: url('img4_web.jpg'); height: 280px; }
-    .img-box-4 { background-image: url('img3_web.jpg'); height: 450px; }
-    .img-box-5 { background-image: url('img2_web.jpg'); height: 350px; }
-    .img-box-6 { background-image: url('img6_web.jpg'); height: 350px; }
-    .img-box-7 { background-image: url('img7_web.jpg'); height: 500px; }
+    /* 갤러리 이미지 박스 사이즈 정상화 */
+    .img-box-1 { background-image: url('img1_web.jpg'); height: 100%; min-height: 520px; }
+    .img-box-2 { background-image: url('img5_web.jpg'); height: 250px; }
+    .img-box-3 { background-image: url('img4_web.jpg'); height: 250px; }
+    .img-box-4 { background-image: url('img3_web.jpg'); height: 500px; }
+    .img-box-5 { background-image: url('img2_web.jpg'); height: 400px; }
+    .img-box-6 { background-image: url('img6_web.jpg'); height: 400px; }
+    .img-box-7 { background-image: url('img7_web.jpg'); height: 550px; }
     
-    /* 평면도 이미지 (잘림 현상 해결을 위해 높이 넉넉히 확보) */
+    /* 평면도 이미지 */
     .img-box-8 { 
       background-image: url('img8_web.png'); 
       height: 650px; 
@@ -72,21 +72,21 @@
       background-color: #1a2e1a; 
     }
     
-    .img-box-spa { background-image: url('spa_web.jpg'); height: 350px; }
-    .img-box-reception { background-image: url('reception_web.jpg'); height: 350px; }
-    .img-box-courtyard { background-image: url('courtyard_web.jpg'); height: 350px; }
-    .img-box-lounge1 { background-image: url('lounge1_web.jpg'); height: 350px; }
-    .img-box-lounge2 { background-image: url('lounge2_web.jpg'); height: 350px; }
-    .img-box-gym { background-image: url('gym_web.jpg'); height: 350px; }
-    .img-box-lounge3 { background-image: url('lounge3_web.jpg'); height: 350px; }
-    .img-box-golf { background-image: url('golf_web.jpg'); height: 350px; }
+    .img-box-spa { background-image: url('spa_web.jpg'); height: 380px; }
+    .img-box-reception { background-image: url('reception_web.jpg'); height: 380px; }
+    .img-box-courtyard { background-image: url('courtyard_web.jpg'); height: 380px; }
+    .img-box-lounge1 { background-image: url('lounge1_web.jpg'); height: 380px; }
+    .img-box-lounge2 { background-image: url('lounge2_web.jpg'); height: 380px; }
+    .img-box-gym { background-image: url('gym_web.jpg'); height: 380px; }
+    .img-box-lounge3 { background-image: url('lounge3_web.jpg'); height: 380px; }
+    .img-box-golf { background-image: url('golf_web.jpg'); height: 380px; }
 
-    .img-box-m1 { background-image: url('Market_01.jpg'); height: 350px; }
-    .img-box-m2 { background-image: url('Market_02.jpg'); height: 350px; }
-    .img-box-m3 { background-image: url('Market_03.jpg'); height: 350px; }
-    .img-box-m4 { background-image: url('Market_04.jpg'); height: 350px; }
+    .img-box-m1 { background-image: url('Market_01.jpg'); height: 400px; }
+    .img-box-m2 { background-image: url('Market_02.jpg'); height: 400px; }
+    .img-box-m3 { background-image: url('Market_03.jpg'); height: 400px; }
+    .img-box-m4 { background-image: url('Market_04.jpg'); height: 400px; }
 
-    /* 평범하고 깔끔한 고딕체 기반 전화번호 버튼 */
+    /* 전화번호 버튼 */
     .btn-call-highlight {
       display: inline-flex;
       align-items: center;
@@ -111,7 +111,7 @@
       background: linear-gradient(135deg, #ebd091 0%, #dfbc7c 50%, #b38e53 100%);
     }
 
-    /* 하단 CTA 섹션 전화번호 고딕체 대형 배너 */
+    /* 하단 CTA 전화번호 배너 */
     .cta-phone-large {
       display: inline-block;
       font-family: 'Noto Sans KR', sans-serif;
@@ -136,12 +136,16 @@
         width: 120px;
         height: 38px !important; 
       }
+      .hero-content .logo-wrap {
+        width: 200px;
+        height: 65px;
+      }
       .btn-call-highlight {
         font-size: 0.9rem !important;
         padding: 6px 14px !important;
       }
       .img-box-8 {
-        height: 350px; /* 모바일 화면에 맞춘 평면도 높이 조절 */
+        height: 350px;
       }
       .premium-title br,
       .summary h2 br,
