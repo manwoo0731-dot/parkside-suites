@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 우클릭 방지 및 텍스트/이미지 선택 차단 설정 (CSS 강화) */
+    /* 우클릭 및 선택, 드래그 원천 차단 */
     html, body {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -18,7 +18,7 @@
       -webkit-touch-callout: none;
     }
     img, video {
-      pointer-events: none !important; /* 마우스 이벤트 원천 차단 */
+      pointer-events: none !important;
       -webkit-user-drag: none;
     }
 
@@ -44,6 +44,8 @@
       box-shadow: 0 4px 20px rgba(201, 166, 107, 0.4);
       transition: all 0.3s ease;
       text-decoration: none;
+      position: relative;
+      z-index: 10;
     }
     .btn-call-highlight:hover {
       transform: translateY(-2px);
@@ -63,6 +65,8 @@
       margin-bottom: 25px;
       text-decoration: none;
       transition: opacity 0.3s;
+      position: relative;
+      z-index: 10;
     }
     .cta-phone-large:hover {
       opacity: 0.85;
@@ -70,16 +74,13 @@
 
     /* 모바일 화면(768px 이하) 최적화 설정 */
     @media (max-width: 768px) {
-      /* 상단 로고 크기 확실하게 줄이기 */
       header .logo img {
         height: 38px !important; 
       }
-      /* 상단 전화번호 버튼 크기 조절 */
       .btn-call-highlight {
         font-size: 0.9rem !important;
         padding: 6px 14px !important;
       }
-      /* 모바일에서 어색한 강제 줄바꿈(br) 무시하고 자연스럽게 이어서 출력 */
       .premium-title br,
       .summary h2 br,
       .hero-content p br,
@@ -279,7 +280,7 @@
         <p>더파크사이드 서울의 특별한 가치를 가장 먼저 만나보세요.</p>
     </div>
     
-    <form id="interestForm" action="https://formspree.io/f/mvkpzzjd" method="POST" class="interest-form">
+    <form id="interestForm" action="https://formspree.io/f/mvkpzzjd" method="POST" class="interest-form" style="position:relative; z-index:10;">
         <!-- 성명 -->
         <div class="form-group">
             <label for="name">성명 <span class="required">*</span></label>
@@ -356,16 +357,57 @@
     </form>
 
     <!-- 완료 시 나타나는 메시지 박스 -->
-    <div id="successMessage" style="display: none; text-align: center; padding: 40px 0;">
+    <div id="successMessage" style="display: none; text-align: center; padding: 40px 0; position:relative; z-index:10;">
         <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">등록이 완료되었습니다!</h3>
         <p style="color: #aaa; font-size: 1rem;">더파크사이드 서울의 소식을 빠르게 전해드리겠습니다.</p>
         <button type="button" onclick="location.reload()" class="btn-submit" style="margin-top: 25px; width: auto; padding: 10px 30px;">확인</button>
     </div>
 </div>
 
-<!-- 자바스크립트 연동 및 강력한 보안 스크립트 -->
+<section class="features">
+  <div class="features-grid">
+    <div class="feat">
+      <h3>Yongsan Park View</h3>
+      <p>용산공원을 정면으로 바라보는 유일한 주거 단지. 중대형 평형 영구 조망.</p>
+    </div>
+    <div class="feat">
+      <h3>Rosewood Club</h3>
+      <p>국내 최초 로즈우드가 직접 운영하는 입주민 전용 커뮤니티.</p>
+    </div>
+    <div class="feat">
+      <h3>MXD Complex</h3>
+      <p>주거·호텔·리테일·오피스·문화가 한 곳에 모인 완성형 도시 라이프.</p>
+    </div>
+    <div class="feat">
+      <h3>Premium Finishes</h3>
+      <p>몰테니 다다 키친, 슈코 창호, 토토·제시·콜러 등 글로벌 하이엔드 마감.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>더파크사이드 스위트를<br>소유한다는 것은</h2>
+  <p>새롭게 창조되는 서울의 중심이자<br>하나의 유니버스를 온전히 내 것으로 만드는 것입니다.</p>
+  <a href="tel:1800-1887" class="cta-phone-large">1800-1887</a>
+  <div style="margin-top: 10px; position:relative; z-index:10;">
+    <a href="tel:1800-1887" class="btn-gold">전화 상담 연결</a>
+  </div>
+</section>
+
+<footer>
+  <div class="company">
+    가디스 주식회사<br>
+    사업자등록번호 : 350-86-03828 · 대표자 : 정현영<br>
+    상담전화 1800-1887
+  </div>
+  <div class="copy">
+    © 2025–2026 The Parkside Suites. All rights reserved.<br>
+    본 페이지는 참고용으로 제작되었습니다. 실제 내용과 다를 수 있습니다.
+  </div>
+</footer>
+
+<!-- 강력한 우클릭 차단 및 개발자 도구 방지 스크립트 -->
 <script>
-    // 관심고객 등록 폼 전송 스크립트
     document.getElementById('interestForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -396,11 +438,36 @@
         });
     });
 
-    // 우클릭 방지 이벤트 핸들러 강화
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // 우클릭 방지 오버레이 레이어 동적 생성 (마우스 우클릭을 완벽하게 가로챔)
+    document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.zIndex = '999999';
+        overlay.style.background = 'transparent';
+        overlay.style.pointerEvents = 'none'; // 평소에는 클릭 통과
+        
+        // 우클릭 이벤트만 확실하게 차단
+        overlay.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        document.body.appendChild(overlay);
+    });
+
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
         return false;
-    });
+    }, true);
 
     document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
     document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
@@ -414,55 +481,6 @@
             return false;
         }
     });
-</script>
-
-<section class="features">
-  <div class="features-grid">
-    <div class="feat">
-      <h3>Yongsan Park View</h3>
-      <p>용산공원을 정면으로 바라보는 유일한 주거 단지. 중대형 평형 영구 조망.</p>
-    </div>
-    <div class="feat">
-      <h3>Rosewood Club</h3>
-      <p>국내 최초 로즈우드가 직접 운영하는 입주민 전용 커뮤니티.</p>
-    </div>
-    <div class="feat">
-      <h3>MXD Complex</h3>
-      <p>주거·호텔·리테일·오피스·문화가 한 곳에 모인 완성형 도시 라이프.</p>
-    </div>
-    <div class="feat">
-      <h3>Premium Finishes</h3>
-      <p>몰테니 다다 키친, 슈코 창호, 토토·제시·콜러 등 글로벌 하이엔드 마감.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="contact">
-  <h2>더파크사이드 스위트를<br>소유한다는 것은</h2>
-  <p>새롭게 창조되는 서울의 중심이자<br>하나의 유니버스를 온전히 내 것으로 만드는 것입니다.</p>
-  <a href="tel:1800-1887" class="cta-phone-large">1800-1887</a>
-  <div style="margin-top: 10px;">
-    <a href="tel:1800-1887" class="btn-gold">전화 상담 연결</a>
-  </div>
-</section>
-
-<footer>
-  <div class="company">
-    가디스 주식회사<br>
-    사업자등록번호 : 350-86-03828 · 대표자 : 정현영<br>
-    상담전화 1800-1887
-  </div>
-  <div class="copy">
-    © 2025–2026 The Parkside Suites. All rights reserved.<br>
-    본 페이지는 참고용으로 제작되었습니다. 실제 내용과 다를 수 있습니다.
-  </div>
-</footer>
-
-<script>
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 60);
-  });
 </script>
 </body>
 </html>
