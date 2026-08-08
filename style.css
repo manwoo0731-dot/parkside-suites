@@ -1,0 +1,377 @@
+/* Reset & Base */
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111;
+  --text: #f2efe8;
+  --muted: #9a958c;
+  --gold: #c9a66b;
+  --border: rgba(255,255,255,0.08);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+h1,h2,h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+header {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  padding: 20px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+  transition: background .3s;
+}
+header.scrolled {
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.logo img { height: 42px; width: auto; }
+.btn-call {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  transition: .25s;
+}
+.btn-call:hover { background: var(--gold); color: #000; }
+
+.hero {
+  height: 100vh; min-height: 650px;
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+}
+.hero video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  z-index: 1;
+}
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 800px; padding: 0 24px;
+}
+.hero-content .logo-wrap {
+  margin-bottom: 40px;
+  display: flex; justify-content: center;
+}
+.hero-content .logo-wrap img {
+  max-width: 360px; width: 70%; height: auto;
+}
+.hero-content p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.05rem; font-weight: 300;
+  margin-bottom: 36px;
+}
+.hero-btns {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+}
+.btn-gold {
+  background: var(--gold); color: #111;
+  padding: 14px 32px; font-size: 0.85rem;
+  letter-spacing: 0.1em; font-weight: 500;
+  transition: .25s;
+}
+.btn-gold:hover { background: #d4b57a; }
+.btn-line {
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 14px 32px; font-size: 0.85rem;
+  letter-spacing: 0.1em; transition: .25s;
+}
+.btn-line:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+.summary {
+  padding: 100px 24px; text-align: center;
+  background: var(--bg2);
+}
+.summary h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  margin-bottom: 28px; line-height: 1.4;
+}
+.summary ul {
+  list-style: none; display: flex; flex-wrap: wrap;
+  justify-content: center; gap: 12px 32px;
+  color: var(--muted); font-size: 0.9rem;
+  letter-spacing: 0.06em;
+}
+
+.premium { padding: 120px 24px; }
+.container { max-width: 1100px; margin: 0 auto; }
+.premium-label {
+  font-size: 0.75rem; letter-spacing: 0.3em;
+  color: var(--gold); margin-bottom: 12px;
+}
+.premium-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.35; margin-bottom: 28px;
+}
+.premium-desc {
+  color: var(--muted); font-weight: 300;
+  font-size: 1.05rem; max-width: 640px;
+  margin-bottom: 60px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.gallery-tall { grid-row: span 2; }
+.gallery img, .gallery-full img {
+  width: 100%; height: 100%;
+  object-fit: cover; border-radius: 2px;
+}
+.gallery-side { display: grid; gap: 16px; }
+.gallery-full { margin-top: 16px; }
+.gallery-full img {
+  width: 100%; max-height: 480px; object-fit: cover;
+}
+@media (max-width: 768px) {
+  .gallery { grid-template-columns: 1fr; }
+  .gallery-tall { grid-row: auto; }
+}
+
+/* Premium Section 04 Integration */
+.sec-premium {
+    padding: 120px 24px;
+    background-color: var(--bg2);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.sec-premium .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sec-premium .sub-title {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 0.3em;
+}
+
+.sec-premium .main-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.35;
+    margin-bottom: 28px;
+}
+
+.sec-premium .desc {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.features {
+  padding: 80px 24px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  max-width: 1100px; margin: 0 auto;
+}
+.feat h3 {
+  font-size: 1.15rem; margin-bottom: 8px;
+  color: var(--gold);
+}
+.feat p { color: var(--muted); font-size: 0.92rem; font-weight: 300; }
+
+.cta {
+  padding: 120px 24px; text-align: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+              url('img6_web.jpg') center/cover no-repeat;
+}
+.cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 16px;
+}
+.cta p {
+  color: var(--muted); margin-bottom: 36px;
+  font-weight: 300;
+}
+
+footer {
+  padding: 48px 24px 32px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  text-align: center;
+}
+footer .company {
+  color: var(--muted); font-size: 0.85rem;
+  margin-bottom: 12px; line-height: 1.8;
+}
+footer .copy {
+  color: rgba(255,255,255,0.35); font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  header { padding: 16px 20px; }
+  .hero-content .logo-wrap img { max-width: 260px; }
+  .sec-premium { padding: 80px 20px; }
+}
+
+/* ==========================================
+   관심고객 등록 폼 스타일 (중앙 정렬 및 프리미엄 디자인)
+   ================================---------- */
+.interest-form-container {
+    max-width: 640px;
+    margin: 60px auto;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    color: var(--text);
+    text-align: left;
+}
+
+/* 상단 타이틀 영문/한글 중앙 정렬 및 강조 */
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    font-size: 0.95rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-header .sub-title {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.form-header p {
+    color: var(--muted);
+    font-size: 1rem;
+    letter-spacing: -0.2px;
+}
+
+/* 입력 필드 레이아웃 */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required {
+    color: #e74c3c;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #262626;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group select option {
+    color: #888;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background-color: #1f1f1f;
+}
+
+.address-group {
+    display: flex;
+    gap: 10px;
+}
+
+.address-group select {
+    flex: 1;
+}
+
+.address-group input {
+    flex: 1.5;
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+    padding-top: 8px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ccc;
+}
+
+.checkbox-group label {
+    font-size: 0.9rem;
+    color: #bbb;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--gold);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+    background-color: #dfbc7c;
+    transform: translateY(-2px);
+}
