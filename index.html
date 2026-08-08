@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 좌측 상단 로고 2배 크기 확대 */
+    /* 기본(PC 화면) 로고 크기 */
     header .logo img {
       height: 110px !important; 
       width: auto;
@@ -53,6 +53,17 @@
     }
     .cta-phone-large:hover {
       opacity: 0.85;
+    }
+
+    /* 모바일 화면(768px 이하)에서 로고와 전화번호 크기 자동 축소 */
+    @media (max-width: 768px) {
+      header .logo img {
+        height: 50px !important; /* 모바일에서 보기 좋게 축소 */
+      }
+      .btn-call-highlight {
+        font-size: 0.95rem !important;
+        padding: 7px 14px !important;
+      }
     }
   </style>
 </head>
