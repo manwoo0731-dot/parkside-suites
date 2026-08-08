@@ -9,15 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 우클릭 방지 및 텍스트/이미지 선택 드래그 차단 설정 */
-    body {
+    /* 우클릭 방지 및 텍스트/이미지 선택 차단 설정 (CSS 강화) */
+    html, body {
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      -webkit-touch-callout: none;
     }
-    img {
-      pointer-events: none; /* 이미지 마우스 이벤트 차단 (드래그 및 저장 방지) */
+    img, video {
+      pointer-events: none !important; /* 마우스 이벤트 원천 차단 */
+      -webkit-user-drag: none;
     }
 
     /* 기본(PC 화면) 로고 크기 */
@@ -93,7 +95,7 @@
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
 <header id="header">
   <a href="#" class="logo">
@@ -361,7 +363,7 @@
     </div>
 </div>
 
-<!-- 자바스크립트 연동 및 보안 코드 -->
+<!-- 자바스크립트 연동 및 강력한 보안 스크립트 -->
 <script>
     // 관심고객 등록 폼 전송 스크립트
     document.getElementById('interestForm').addEventListener('submit', function(e) {
@@ -394,13 +396,14 @@
         });
     });
 
-    // 우클릭 방지 및 소스 보호 스크립트
+    // 우클릭 방지 이벤트 핸들러 강화
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
+        return false;
     });
 
-    document.addEventListener('dragstart', function(e) { e.preventDefault(); });
-    document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+    document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
 
     document.addEventListener('keydown', function(e) {
         if (
@@ -408,6 +411,7 @@
             (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'c' || e.key === 'C'))
         ) {
             e.preventDefault();
+            return false;
         }
     });
 </script>
