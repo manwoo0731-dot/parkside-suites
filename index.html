@@ -17,9 +17,26 @@
       user-select: none;
       -webkit-touch-callout: none;
     }
+
+    /* 모든 이미지와 비디오 마우스 이벤트 원천 차단 */
     img, video {
       pointer-events: none !important;
       -webkit-user-drag: none;
+    }
+
+    /* 모든 이미지 부모 영역에 투명 방패 레이어 적용 (크롬, 엣지, 웨일 공통 방어) */
+    .gallery, .gallery-tall, .gallery-side, .gallery-full, .hero-content .logo-wrap, header .logo {
+      position: relative;
+    }
+    .gallery div::after, .gallery-full::after, .gallery-tall::after, .gallery-side::after, .hero-content .logo-wrap::after, header .logo::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: transparent;
     }
 
     /* 기본(PC 화면) 로고 크기 */
@@ -45,7 +62,7 @@
       transition: all 0.3s ease;
       text-decoration: none;
       position: relative;
-      z-index: 10;
+      z-index: 20;
     }
     .btn-call-highlight:hover {
       transform: translateY(-2px);
@@ -66,7 +83,7 @@
       text-decoration: none;
       transition: opacity 0.3s;
       position: relative;
-      z-index: 10;
+      z-index: 20;
     }
     .cta-phone-large:hover {
       opacity: 0.85;
@@ -280,7 +297,7 @@
         <p>더파크사이드 서울의 특별한 가치를 가장 먼저 만나보세요.</p>
     </div>
     
-    <form id="interestForm" action="https://formspree.io/f/mvkpzzjd" method="POST" class="interest-form" style="position:relative; z-index:10;">
+    <form id="interestForm" action="https://formspree.io/f/mvkpzzjd" method="POST" class="interest-form" style="position:relative; z-index:20;">
         <!-- 성명 -->
         <div class="form-group">
             <label for="name">성명 <span class="required">*</span></label>
@@ -357,7 +374,7 @@
     </form>
 
     <!-- 완료 시 나타나는 메시지 박스 -->
-    <div id="successMessage" style="display: none; text-align: center; padding: 40px 0; position:relative; z-index:10;">
+    <div id="successMessage" style="display: none; text-align: center; padding: 40px 0; position:relative; z-index:20;">
         <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">등록이 완료되었습니다!</h3>
         <p style="color: #aaa; font-size: 1rem;">더파크사이드 서울의 소식을 빠르게 전해드리겠습니다.</p>
         <button type="button" onclick="location.reload()" class="btn-submit" style="margin-top: 25px; width: auto; padding: 10px 30px;">확인</button>
@@ -389,7 +406,7 @@
   <h2>더파크사이드 스위트를<br>소유한다는 것은</h2>
   <p>새롭게 창조되는 서울의 중심이자<br>하나의 유니버스를 온전히 내 것으로 만드는 것입니다.</p>
   <a href="tel:1800-1887" class="cta-phone-large">1800-1887</a>
-  <div style="margin-top: 10px; position:relative; z-index:10;">
+  <div style="margin-top: 10px; position:relative; z-index:20;">
     <a href="tel:1800-1887" class="btn-gold">전화 상담 연결</a>
   </div>
 </section>
@@ -406,7 +423,6 @@
   </div>
 </footer>
 
-<!-- 강력한 우클릭 차단 및 개발자 도구 방지 스크립트 -->
 <script>
     document.getElementById('interestForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -441,27 +457,6 @@
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
-    });
-
-    // 우클릭 방지 오버레이 레이어 동적 생성 (마우스 우클릭을 완벽하게 가로챔)
-    document.addEventListener('DOMContentLoaded', function() {
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100vw';
-        overlay.style.height = '100vh';
-        overlay.style.zIndex = '999999';
-        overlay.style.background = 'transparent';
-        overlay.style.pointerEvents = 'none'; // 평소에는 클릭 통과
-        
-        // 우클릭 이벤트만 확실하게 차단
-        overlay.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            return false;
-        });
-        
-        document.body.appendChild(overlay);
     });
 
     document.addEventListener('contextmenu', function(e) {
