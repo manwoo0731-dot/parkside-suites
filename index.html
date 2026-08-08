@@ -61,7 +61,16 @@
     .img-box-5 { background-image: url('img2_web.jpg'); height: 350px; }
     .img-box-6 { background-image: url('img6_web.jpg'); height: 350px; }
     .img-box-7 { background-image: url('img7_web.jpg'); height: 500px; }
-    .img-box-8 { background-image: url('img8_web.png'); height: 400px; background-size: contain; background-color: #1a2e1a; }
+    
+    /* 평면도 이미지 (잘림 현상 해결을 위해 높이 넉넉히 확보) */
+    .img-box-8 { 
+      background-image: url('img8_web.png'); 
+      height: 650px; 
+      background-size: contain; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #1a2e1a; 
+    }
     
     .img-box-spa { background-image: url('spa_web.jpg'); height: 350px; }
     .img-box-reception { background-image: url('reception_web.jpg'); height: 350px; }
@@ -130,6 +139,9 @@
       .btn-call-highlight {
         font-size: 0.9rem !important;
         padding: 6px 14px !important;
+      }
+      .img-box-8 {
+        height: 350px; /* 모바일 화면에 맞춘 평면도 높이 조절 */
       }
       .premium-title br,
       .summary h2 br,
