@@ -18,32 +18,64 @@
       -webkit-touch-callout: none;
     }
 
-    /* 모든 이미지와 비디오 마우스 이벤트 원천 차단 */
-    img, video {
+    video {
       pointer-events: none !important;
       -webkit-user-drag: none;
     }
 
-    /* 모든 이미지 부모 영역에 투명 방패 레이어 적용 (크롬, 엣지, 웨일 공통 방어) */
-    .gallery, .gallery-tall, .gallery-side, .gallery-full, .hero-content .logo-wrap, header .logo {
-      position: relative;
-    }
-    .gallery div::after, .gallery-full::after, .gallery-tall::after, .gallery-side::after, .hero-content .logo-wrap::after, header .logo::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
+    /* CSS 배경 이미지 공통 스타일 (우클릭 저장 원천 차단) */
+    .bg-img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       width: 100%;
-      height: 100%;
-      z-index: 10;
-      background: transparent;
     }
 
-    /* 기본(PC 화면) 로고 크기 */
-    header .logo img {
-      height: 110px !important; 
-      width: auto;
+    /* 상단 로고 배경 */
+    header .logo {
+      display: inline-block;
+      width: 180px;
+      height: 110px;
+      background-image: url('logo.png');
+      background-size: contain;
+      background-position: left center;
+      background-repeat: no-repeat;
     }
+
+    /* 히어로 섹션 로고 배경 */
+    .hero-content .logo-wrap {
+      width: 220px;
+      height: 60px;
+      margin: 0 auto 20px;
+      background-image: url('logo.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* 갤러리 이미지들을 배경 이미지 박스로 정의 */
+    .img-box-1 { background-image: url('img1_web.jpg'); height: 100%; min-height: 450px; }
+    .img-box-2 { background-image: url('img5_web.jpg'); height: 280px; }
+    .img-box-3 { background-image: url('img4_web.jpg'); height: 280px; }
+    .img-box-4 { background-image: url('img3_web.jpg'); height: 450px; }
+    .img-box-5 { background-image: url('img2_web.jpg'); height: 350px; }
+    .img-box-6 { background-image: url('img6_web.jpg'); height: 350px; }
+    .img-box-7 { background-image: url('img7_web.jpg'); height: 500px; }
+    .img-box-8 { background-image: url('img8_web.png'); height: 400px; background-size: contain; background-color: #1a2e1a; }
+    
+    .img-box-spa { background-image: url('spa_web.jpg'); height: 350px; }
+    .img-box-reception { background-image: url('reception_web.jpg'); height: 350px; }
+    .img-box-courtyard { background-image: url('courtyard_web.jpg'); height: 350px; }
+    .img-box-lounge1 { background-image: url('lounge1_web.jpg'); height: 350px; }
+    .img-box-lounge2 { background-image: url('lounge2_web.jpg'); height: 350px; }
+    .img-box-gym { background-image: url('gym_web.jpg'); height: 350px; }
+    .img-box-lounge3 { background-image: url('lounge3_web.jpg'); height: 350px; }
+    .img-box-golf { background-image: url('golf_web.jpg'); height: 350px; }
+
+    .img-box-m1 { background-image: url('Market_01.jpg'); height: 350px; }
+    .img-box-m2 { background-image: url('Market_02.jpg'); height: 350px; }
+    .img-box-m3 { background-image: url('Market_03.jpg'); height: 350px; }
+    .img-box-m4 { background-image: url('Market_04.jpg'); height: 350px; }
 
     /* 평범하고 깔끔한 고딕체 기반 전화번호 버튼 */
     .btn-call-highlight {
@@ -91,7 +123,8 @@
 
     /* 모바일 화면(768px 이하) 최적화 설정 */
     @media (max-width: 768px) {
-      header .logo img {
+      header .logo {
+        width: 120px;
         height: 38px !important; 
       }
       .btn-call-highlight {
@@ -116,9 +149,7 @@
 <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
 <header id="header">
-  <a href="#" class="logo">
-    <img src="logo.png" alt="THE PARKSIDE SUITES">
-  </a>
+  <a href="#" class="logo"></a>
   <a href="tel:1800-1887" class="btn-call-highlight">1800-1887</a>
 </header>
 
@@ -128,9 +159,7 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="logo-wrap">
-      <img src="logo.png" alt="THE PARKSIDE SUITES">
-    </div>
+    <div class="logo-wrap"></div>
     <p>용산공원, 남산, 한강을 아우르는 곳<br>울트라 럭셔리 호텔의 서비스를 일상으로 누리는 하이엔드 오피스텔</p>
     <div class="hero-btns">
       <a href="#premium" class="btn-gold">PREMIUM 살펴보기</a>
@@ -165,19 +194,19 @@
 
     <div class="gallery">
       <div class="gallery-tall">
-        <img src="img1_web.jpg" alt="더파크사이드 서울 단지 전경">
+        <div class="bg-img img-box-1"></div>
       </div>
       <div class="gallery-side">
-        <img src="img5_web.jpg" alt="오피스텔 입구">
-        <img src="img4_web.jpg" alt="벚꽃 거리">
+        <div class="bg-img img-box-2" style="margin-bottom: 16px;"></div>
+        <div class="bg-img img-box-3"></div>
       </div>
     </div>
     <div class="gallery-full">
-      <img src="img3_web.jpg" alt="광장">
+      <div class="bg-img img-box-4"></div>
     </div>
-    <div class="gallery" style="margin-top:16px;">
-      <img src="img2_web.jpg" alt="로비 인테리어">
-      <img src="img6_web.jpg" alt="야경">
+    <div class="gallery" style="margin-top:16px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div class="bg-img img-box-5"></div>
+      <div class="bg-img img-box-6"></div>
     </div>
   </div>
 </section>
@@ -197,7 +226,7 @@
       이 미래형 공간을 가장 가까이에서 누릴 수 있습니다.
     </p>
     <div class="gallery-full">
-      <img src="img7_web.jpg" alt="용산공원 뷰 발코니" style="width:100%; max-height:none; object-fit:cover;">
+      <div class="bg-img img-box-7"></div>
     </div>
   </div>
 </section>
@@ -217,7 +246,7 @@
     </p>
 
     <div class="gallery-full" style="margin-bottom: 40px;">
-      <img src="img8_web.png" alt="THE PARKSIDE CLUB BY ROSEWOOD SEOUL 평면도" style="width:100%; max-height:none; object-fit:contain; background:#1a2e1a;">
+      <div class="bg-img img-box-8"></div>
     </div>
 
     <div style="text-align:center; margin-bottom: 24px; color: var(--gold); letter-spacing: 0.15em; font-size: 0.85rem;">
@@ -240,21 +269,21 @@
     </div>
 
     <div style="margin-top: 48px;">
-      <div class="gallery" style="margin-bottom:16px;">
-        <img src="spa_web.jpg" alt="하이드로테라피 풀 / 스파">
-        <img src="reception_web.jpg" alt="웰컴 로비 / 리셉션">
+      <div class="gallery" style="margin-bottom:16px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="bg-img img-box-spa"></div>
+        <div class="bg-img img-box-reception"></div>
       </div>
-      <div class="gallery" style="margin-bottom:16px;">
-        <img src="courtyard_web.jpg" alt="아트리움 / 중정">
-        <img src="lounge1_web.jpg" alt="클럽 라운지">
+      <div class="gallery" style="margin-bottom:16px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="bg-img img-box-courtyard"></div>
+        <div class="bg-img img-box-lounge1"></div>
       </div>
-      <div class="gallery" style="margin-bottom:16px;">
-        <img src="lounge2_web.jpg" alt="프라이빗 라운지">
-        <img src="gym_web.jpg" alt="피트니스">
+      <div class="gallery" style="margin-bottom:16px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="bg-img img-box-lounge2"></div>
+        <div class="bg-img img-box-gym"></div>
       </div>
-      <div class="gallery">
-        <img src="lounge3_web.jpg" alt="카페 & 레스토랑">
-        <img src="golf_web.jpg" alt="골프클럽">
+      <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="bg-img img-box-lounge3"></div>
+        <div class="bg-img img-box-golf"></div>
       </div>
     </div>
 
@@ -278,14 +307,14 @@
         </div>
     </div>
 
-    <div style="margin-top: 48px;">
-      <div class="gallery" style="margin-bottom:16px;">
-        <img src="Market_01.jpg" alt="Market_01">
-        <img src="Market_02.jpg" alt="Market_02">
+    <div style="margin-top: 48px; max-width: 1200px; margin: 48px auto 0; padding: 0 20px;">
+      <div class="gallery" style="margin-bottom:16px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="bg-img img-box-m1"></div>
+        <div class="bg-img img-box-m2"></div>
       </div>
-      <div class="gallery" style="margin-bottom:16px;">
-        <img src="Market_03.jpg" alt="Market_03">
-        <img src="Market_04.jpg" alt="Market_04">
+      <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="bg-img img-box-m3"></div>
+        <div class="bg-img img-box-m4"></div>
       </div>
     </div>
 </section>
