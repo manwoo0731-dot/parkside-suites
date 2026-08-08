@@ -55,14 +55,29 @@
       opacity: 0.85;
     }
 
-    /* 모바일 화면(768px 이하)에서 로고와 전화번호 크기 자동 축소 */
+    /* 모바일 화면(768px 이하) 최적화 설정 */
     @media (max-width: 768px) {
+      /* 상단 로고 크기 확실하게 줄이기 */
       header .logo img {
-        height: 50px !important; /* 모바일에서 보기 좋게 축소 */
+        height: 38px !important; 
       }
+      /* 상단 전화번호 버튼 크기 조절 */
       .btn-call-highlight {
-        font-size: 0.95rem !important;
-        padding: 7px 14px !important;
+        font-size: 0.9rem !important;
+        padding: 6px 14px !important;
+      }
+      /* 모바일에서 어색한 강제 줄바꿈(br) 무시하고 자연스럽게 이어서 출력 */
+      .premium-title br,
+      .summary h2 br,
+      .hero-content p br,
+      .sec-premium .main-title br {
+        display: inline;
+      }
+      .premium-title br::after,
+      .summary h2 br::after,
+      .hero-content p br::after,
+      .sec-premium .main-title br::after {
+        content: " ";
       }
     }
   </style>
