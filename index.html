@@ -36,7 +36,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.theparksideyongsan.com/">
   <meta property="og:title" content="용산공원 뷰에 신세계의 가치까지 | 더파크사이드 스위트">
-  <meta property="og:description" content="용산공원의 영구 조망과 신세계백화점 호재를 품은 하이엔드 라이프. 56~70㎡ 특별 분양.">
+  <meta property="og:description" content="용산공원의 영구 조망과 신세계백화점 호재를 품은 하이엔드 라이프. 특별 분양.">
   <meta property="og:image" content="https://www.theparksideyongsan.com/main111.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +54,8 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       color: #f4f4f4 !important;
       margin: 0;
       padding: 0;
+      word-break: keep-all; /* 단어가 중간에 짤리지 않고 어절 단위로 떨어지도록 설정 */
+      word-wrap: break-word;
     }
 
     img, video {
@@ -210,13 +212,15 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       line-height: 1.4;
       margin-bottom: 20px;
       color: #ffffff !important;
+      word-break: keep-all;
     }
     .desc-text {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #cccccc !important;
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto 40px auto;
+      word-break: keep-all;
     }
 
     .service-grid {
@@ -241,6 +245,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       font-size: 0.95rem;
       color: #cccccc;
       line-height: 1.5;
+      word-break: keep-all;
     }
 
     /* 하단 고정 폼 (어두운 테마) */
@@ -290,9 +295,12 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
     /* 기본 섹션 타이틀 및 본문 글씨 가독성 강제 보정 */
     .premium-title, .summary h2, .sec-premium .main-title, .features h3 {
       color: #ffffff !important;
+      word-break: keep-all;
     }
     .premium-desc, .summary li, .sec-premium .desc, .features p {
       color: #cccccc !important;
+      word-break: keep-all;
+      line-height: 1.7;
     }
 
     /* 모바일 최적화 (768px 이하) */
@@ -321,8 +329,8 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       }
 
       .sec-macro, .sec-micro { padding: 50px 15px; }
-      .highlight-title { font-size: 1.5rem; }
-      .desc-text { font-size: 0.95rem; }
+      .highlight-title { font-size: 1.45rem; line-height: 1.35; }
+      .desc-text { font-size: 0.95rem; line-height: 1.6; }
 
       #interestSection {
         width: 90%;
@@ -372,8 +380,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="section-badge">CREATE THE CENTER OF SEOUL</span>
     <h2 class="highlight-title">단순한 부촌을 넘어선 독보적인 세계,<br>유엔사 부지에 세워지는 서울의 새로운 중심</h2>
     <p class="desc-text">
-      용산구 이태원동 유엔사 부지. 이곳은 단순한 주거를 짓는 것이 아닙니다.<br>
-      주거, 휴식, 문화, 예술, 비즈니스가 경계 없이 유기적으로 연결된 선진국형 복합용도개발(MXD) 단지로서,<br>
+      용산구 이태원동 유엔사 부지. 이곳은 단순한 주거를 짓는 것이 아닙니다. 
+      주거, 휴식, 문화, 예술, 비즈니스가 경계 없이 유기적으로 연결된 선진국형 복합용도개발(MXD) 단지로서, 
       서울의 문화적 심장이 될 '더파크사이드 유니버스'를 창조합니다.
     </p>
   </div>
@@ -426,8 +434,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       330m의 더파크사이드 웨이 (THE PARKSIDE WAY)
     </h2>
     <p class="premium-desc">
-      단지 중앙을 가로지르는 330m의 보행자 거리는 용산공원과 이태원을 잇는 새로운 문화 축입니다.<br>
-      해외 유명 갤러리와 복합 공연장이 들어서며, 럭셔리 라이프스타일 샵들로 활기가 넘치는<br>
+      단지 중앙을 가로지르는 330m의 보행자 거리는 용산공원과 이태원을 잇는 새로운 문화 축입니다. 
+      해외 유명 갤러리와 복합 공연장이 들어서며, 럭셔리 라이프스타일 샵들로 활기가 넘치는 
       예술과 문화의 중심(Art & Culture Space)을 일상에서 누릴 수 있습니다.
     </p>
     <div class="gallery-full">
@@ -436,14 +444,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 미시적 소형 평형/서비스 섹션 (Micro) -->
+<!-- 미시적 소형 평형/서비스 섹션 (Micro) - 평형 및 대형 평형 마감 문구 삭제 반영 -->
 <section class="sec-micro" id="signature">
   <div class="container">
     <span class="section-badge">THE SIGNATURE SUITES</span>
-    <h2 class="highlight-title">소수에게만 허락된 프라이빗 스튜디오<br>[ 56㎡ · 63㎡ · 70㎡ ]</h2>
+    <h2 class="highlight-title">소수에게만 허락된 프라이빗 스튜디오</h2>
     <p class="desc-text">
-      실거주 대형 평형 분양 마감.<br>
-      성공한 CEO의 세컨오피스로, VIP를 위한 영빈관으로, 나만의 하이엔드 케이브로.<br>
+      성공한 CEO의 세컨오피스로, VIP를 위한 영빈관으로, 나만의 하이엔드 케이브로. 
       비서 없이도 완벽하게 굴러가는 로즈우드 서울의 6성급 컨시어지가 일상을 케어합니다.
     </p>
 
@@ -477,8 +484,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       울트라 럭셔리 호텔 로즈우드 서울
     </h2>
     <p class="premium-desc">
-      글로벌 럭셔리 라이프스타일 기업 Rosewood의 국내 최초 진출.<br>
-      로즈우드 서울이 직접 운영하는 '더파크사이드클럽'은 각 지역의 고유한 문화를 담아내는 철학을 바탕으로<br>
+      글로벌 럭셔리 라이프스타일 기업 Rosewood의 국내 최초 진출. 
+      로즈우드 서울이 직접 운영하는 '더파크사이드클럽'은 각 지역의 고유한 문화를 담아내는 철학을 바탕으로 
       더파크사이드 스위트 거주자에게 세심하고 특별한 맞춤형 서비스를 제공합니다.
     </p>
     
@@ -533,7 +540,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="content-body">
             <p class="desc">
-                지하가 아닌 지상에 위치한 약 39,000㎡ 규모의 더파크사이드 몰.<br>
+                지하가 아닌 지상에 위치한 약 39,000㎡ 규모의 더파크사이드 몰. 
                 비즈니스 미팅과 다이닝, 쇼핑을 엘리베이터 하나로 해결하는 완벽한 인프라.
             </p>
         </div>
@@ -639,18 +646,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<!-- 하단 플로팅 2단 배너 영역 -->
 <div class="floating-banner-container" id="floatingBanner">
     <div class="banner-card" id="bannerCard1" onclick="dismissBanner('bannerCard1', event)">
         <button type="button" class="banner-close-btn" onclick="dismissBanner('bannerCard1', event)" title="닫기">&times;</button>
-        <div class="banner-subtitle">SIGNATURE SUITES</div>
-        <div class="banner-title">56·63·70㎡<br>특별 분양</div>
+        <div class="banner-subtitle">THE PARKSIDE SUITES</div>
+        <div class="banner-title">중도금<br>무이자</div>
         <div class="banner-desc">(클릭 시 배너가 닫힙니다)</div>
     </div>
     <div class="banner-card" id="bannerCard2" onclick="scrollToForm(event)">
         <button type="button" class="banner-close-btn" onclick="dismissBanner('bannerCard2', event)" title="닫기">&times;</button>
-        <div class="banner-subtitle">VIP INVITATION</div>
-        <div class="banner-title">프라이빗 갤러리<br>방문 예약</div>
-        <div class="banner-desc" style="color: #dfbc7c; font-weight: bold;">사전 예약 접수중 &rarr;</div>
+        <div class="banner-subtitle">SPECIAL OFFER</div>
+        <div class="banner-title">시행사 보유분<br>특별분양</div>
+        <div class="banner-desc" style="color: #9e7b43; font-weight: bold;">사전 예약 및 문의 &rarr;</div>
     </div>
 </div>
 
