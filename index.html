@@ -56,6 +56,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       padding: 0;
       word-break: keep-all;
       word-wrap: break-word;
+      scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
     }
 
     img, video {
@@ -411,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- 거시적 비전 섹션 및 메인 조감도 사진 (main111.png) - 잘림 방지 전체 출력 -->
-<section class="sec-macro">
+<section class="sec-macro" id="signature">
   <div class="container" style="max-width: 1100px; margin: 0 auto;">
     <span class="section-badge">CREATE THE CENTER OF SEOUL</span>
     <h2 class="highlight-title">단순한 부촌을 넘어선 독보적인 세계,<br>유엔사 부지에 세워지는 서울의 새로운 중심</h2>
@@ -861,8 +862,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         return false;
     }, true);
 
-    document.addEventListener('dragst
-    art', function(e) { e.preventDefault(); return false; });
+    document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
     document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
 
     document.addEventListener('keydown', function(e) {
