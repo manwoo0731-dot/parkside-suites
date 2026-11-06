@@ -190,13 +190,14 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       margin-top: 4px;
     }
 
-    /* 거시/풍수/미시 커스텀 섹션 */
-    .sec-macro, .sec-geomancy, .sec-micro {
+    /* 섹션 공통 스타일 */
+    .sec-macro, .sec-geomancy, .sec-park, .sec-micro {
       padding: 90px 20px;
       text-align: center;
     }
     .sec-macro { background-color: #151515; color: #fff; border-bottom: 1px solid #222; }
     .sec-geomancy { background-color: #181818; color: #fff; border-bottom: 1px solid #222; }
+    .sec-park { background-color: #151515; color: #fff; border-bottom: 1px solid #222; }
     .sec-micro { background-color: #1a1a1a; color: #fff; border-top: 1px solid #222; border-bottom: 1px solid #222; }
     
     .section-badge {
@@ -222,6 +223,40 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       max-width: 750px;
       margin: 0 auto 40px auto;
       word-break: keep-all;
+    }
+
+    /* 공원 비교 2분할 레이아웃 스타일 */
+    .park-comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto 0 auto;
+    }
+    .park-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #333;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      object-fit: cover;
+    }
+    .park-info {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .park-name {
+      font-family: 'Cormorant Garamond', 'Noto Sans KR', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+    .park-size {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #dfbc7c;
     }
 
     .service-grid {
@@ -328,9 +363,14 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
         gap: 12px;
       }
 
-      .sec-macro, .sec-geomancy, .sec-micro { padding: 50px 15px; }
+      .sec-macro, .sec-geomancy, .sec-park, .sec-micro { padding: 50px 15px; }
       .highlight-title { font-size: 1.45rem; line-height: 1.35; }
       .desc-text { font-size: 0.95rem; line-height: 1.6; }
+
+      .park-comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
 
       #interestSection {
         width: 90%;
@@ -387,7 +427,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ★ 풍수지리 / 천하명당 섹션 (wind.jpg & parkjun.png 완벽 연동) ★ -->
+<!-- 풍수지리 / 천하명당 섹션 -->
 <section class="sec-geomancy">
   <div class="container">
     <span class="section-badge">GEOMANCY</span>
@@ -400,7 +440,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       유엔사 부지의 가치는 그 응집되는 에너지와 더불어 앞으로 크게 왕성해질 것입니다.
     </p>
 
-    <!-- 풍수 전문가 메시지 박스 (parkjun.png 적용) -->
+    <!-- 풍수 전문가 메시지 박스 -->
     <div style="background: #222; border: 1px solid #333; border-radius: 8px; padding: 35px 25px; max-width: 700px; margin: 0 auto 40px auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
       <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid #dfbc7c;">
         <img src="parkjun.png" alt="풍수연구가 박성준" style="width: 100%; height: 100%; object-fit: cover;">
@@ -412,9 +452,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="font-size: 0.9rem; color: #888;">풍수연구가 <strong style="color:#fff;">박성준</strong></div>
     </div>
 
-    <!-- 고지도 이미지 영역 (wind.jpg 적용) -->
+    <!-- 고지도 이미지 영역 -->
     <div class="gallery-full" style="max-width: 900px; margin: 0 auto;">
       <img src="wind.jpg" alt="수선전도 고지도 명당 분석" style="width:100%; border-radius:6px; border:1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    </div>
+  </div>
+</section>
+
+<!-- ★ 한국판 센트럴파크 & 용산공원 비교 섹션 (cpark.jpg & ypark.jpg 나란히 배치) ★ -->
+<section class="sec-park">
+  <div class="container">
+    <span class="section-badge">YONGISAN PARK & CENTRAL PARK</span>
+    <h2 class="highlight-title">한국판 센트럴파크, 용산공원에 펼쳐지는 미래</h2>
+    <p class="desc-text">
+      서울 한가운데 약 303만㎡(약 92만평) 규모의 거대한 녹지공간으로 탄생하는 용산공원은<br>
+      그 규모와 역함에 있어 뉴욕의 센트럴파크에 비유되곤 합니다.<br>
+      센트럴파크는 뉴욕에서 가장 명망 있고 호화로운 초고층 주거타워들이 고급 주거지역을 형성하며<br>
+      독보적인 조망권을 확보한 럭셔리 호텔, 상업시설, 문화시설이 즐비해 전 세계 부호들이 모이는 것으로 유명합니다.<br>
+      용산공원이 한국판 센트럴파크라고 불리는 이유는 여기에도 있습니다.
+    </p>
+
+    <!-- 두 이미지 나란히 배치 그리드 -->
+    <div class="park-comparison-grid">
+      <!-- 세번째 이미지: 센트럴파크 (cpark.jpg) -->
+      <div class="park-item">
+        <img src="cpark.jpg" alt="CENTRAL PARK">
+        <div class="park-info">
+          <div class="park-name">CENTRAL PARK</div>
+          <div class="park-size">3,410,000㎡</div>
+        </div>
+      </div>
+      <!-- 네번째 이미지: 용산공원 (ypark.jpg) -->
+      <div class="park-item">
+        <img src="ypark.jpg" alt="YONGSAN PARK">
+        <div class="park-info">
+          <div class="park-name">YONGSAN PARK</div>
+          <div class="park-size">3,030,000㎡</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
