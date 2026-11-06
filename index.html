@@ -421,9 +421,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 거시적 비전 섹션 및 메인 조감도 사진 (main111.jpg) 배치 -->
+<!-- 거시적 비전 섹션 및 메인 조감도 사진 (main111.png) - 잘림 방지 전체 출력 -->
 <section class="sec-macro">
-  <div class="container">
+  <div class="container" style="max-width: 1100px; margin: 0 auto;">
     <span class="section-badge">CREATE THE CENTER OF SEOUL</span>
     <h2 class="highlight-title">단순한 부촌을 넘어선 독보적인 세계,<br>유엔사 부지에 세워지는 서울의 새로운 중심</h2>
     <p class="desc-text">
@@ -432,9 +432,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       서울의 문화적 심장이 될 '더파크사이드 유니버스'를 창조합니다.
     </p>
 
-    <!-- 메인 조감도 사진 배치 -->
-    <div class="gallery-full" style="max-width: 950px; margin: 40px auto 0 auto;">
-      <img src="main111.png" alt="더파크사이드 서울 전체 조감도" style="width:100%; border-radius:8px; border:1px solid #333; box-shadow: 0 15px 40px rgba(0,0,0,0.6);">
+    <!-- 메인 조감도 사진 배치 (object-fit: contain 및 여백 주어 절대 안 잘리게 처리) -->
+    <div style="width: 100%; margin: 40px auto 0 auto; background: #0a0a0a; border-radius: 12px; padding: 15px; border: 1px solid #333; box-shadow: 0 15px 40px rgba(0,0,0,0.7);">
+      <img src="main111.png" alt="더파크사이드 서울 전체 조감도" style="width:100%; height:auto; display:block; border-radius:8px; object-fit:contain;">
     </div>
   </div>
 </section>
@@ -541,7 +541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ★ [구조 변경완료] 텍스트 상단 + 영상 하단 섹션 1: 더파크사이드 웨이 + way.jpg 추가 ★ -->
+<!-- ★ [구조 완료] 텍스트 상단 + 웨이 대형 이미지 및 영상 하단 섹션 1: 더파크사이드 웨이 ★ -->
 <section class="content-video-section" id="premium3">
   <div class="content-video-container">
     <span class="section-badge">03 · PREMIUM THE PARKSIDE WAY</span>
@@ -550,6 +550,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       단지 중앙을 가로지르는 330m의 보행자 거리, 더파크사이드 웨이는 더파크사이드 서울의 경험이 시작되는 첫 번째 공간이자 녹지가 가득한 울트라 럭셔리 호텔과 접해 있는 라이프스타일 샵들로 활기가 넘치는 거리입니다. 용산공원과 문화의 용광로인 이태원을 잇는 이 멋진 거리에는 해외 유명 갤러리가 들어서고 다양한 공연과 전시가 펼쳐질 복합 공연장이 배치되어 서울을 대표하는 아트의 새로운 중심축이 될 것입니다.
     </p>
 
+    <!-- 웨이 이미지 대형 사이즈로 크게 배치 (way.png) -->
+    <div style="margin: 40px auto; max-width: 1100px; background: #0a0a0a; border-radius: 12px; padding: 15px; border: 1px solid #333; box-shadow: 0 15px 40px rgba(0,0,0,0.7);">
+      <img src="way.png" alt="더파크사이드 웨이 조감도" style="width:100%; height:auto; display:block; border-radius:8px; object-fit:contain;">
+    </div>
 
     <!-- 영상 영역 -->
     <div class="video-box-wrap">
@@ -558,13 +562,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </video>
     </div>
   </div>
-      <!-- 요청하신 way.jpg 이미지 추가 -->
-    <div style="margin: 30px auto 20px auto; max-width: 950px;">
-      <img src="way.png" alt="더파크사이드 웨이 조감도" style="width:100%; border-radius:8px; border:1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-    </div>
 </section>
 
-<!-- ★ [구조 변경완료] 텍스트 상단 + 영상 하단 섹션 2: 로즈우드 서울 ★ -->
+<!-- ★ [구조 완료] 텍스트 상단 + 영상 하단 섹션 2: 로즈우드 서울 ★ -->
 <section class="content-video-section" id="premium4">
   <div class="content-video-container">
     <span class="section-badge">04 · PREMIUM ROSEWOOD SEOUL</span>
@@ -582,22 +582,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- Premium 05 : 신세계 라이프스타일 몰 -->
+<!-- Premium 05 : 신세계 라이프스타일 몰 & 모든 어메니티/맵 이미지들 원본 확장자 완벽 반영 -->
 <section class="sec-premium" id="premium5" style="padding: 90px 20px; background: #181818; text-align: center; border-top: 1px solid #222;">
     <div class="container" style="max-width: 1000px; margin: 0 auto;">
         <span class="section-badge">05 · PREMIUM</span>
-        <h2 class="highlight-title">지상에서 누리는 프리미엄<br>신세계 라이프스타일 몰</h2>
+        <h2 class="highlight-title">지상에서 누리는 프리미엄<br>신세계 라이프스타일 몰 & 울트라 럭셔리 어메니티</h2>
         <p class="desc-text">
-            지하가 아닌 지상에 위치한 약 39,000㎡ 규모의 더파크사이드 몰. 
-            비즈니스 미팅과 다이닝, 쇼핑을 엘리베이터 하나로 해결하는 완벽한 인프라.
+            지하가 아닌 지상에 위치한 약 39,000㎡ 규모의 더파크사이드 몰과 입주민 전용 최고급 커뮤니티 공간.
         </p>
     </div>
-    <div style="max-width: 1000px; margin: 40px auto 0 auto;">
-      <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+    
+    <div style="max-width: 1000px; margin: 40px auto 0 auto; display: flex; flex-direction: column; gap: 20px;">
+      <!-- 프리미엄 맵 (premium_map2.png) -->
+      <div style="width: 100%;">
+        <img src="premium_map2.png" alt="프리미엄 맵" style="width:100%; border-radius:8px; border:1px solid #333; object-fit:cover;">
+      </div>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <img src="250428_NP_유엔사부지 오피스텔_Spa_01.jpg" alt="스파" style="width:100%; border-radius:6px; object-fit:cover;">
+        <img src="250513_NP_유엔사부지 오피스텔_Reception_01.jpg" alt="리셉션" style="width:100%; border-radius:6px; object-fit:cover;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <img src="250515_NP_유엔사부지 오피스텔 어메니티 중정.jpg" alt="중정" style="width:100%; border-radius:6px; object-fit:cover;">
+        <img src="20250414_유엔사부지 오피스텔 어매니티_실내투시도_Lounge_01.jpg" alt="라운지" style="width:100%; border-radius:6px; object-fit:cover;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <img src="20250414_유엔사부지 오피스텔 어매니티_실내투시도_Lounge_03_01.jpg" alt="프라이빗 라운지" style="width:100%; border-radius:6px; object-fit:cover;">
+        <img src="20250414_유엔사부지 오피스텔_Gym_02_01.jpg.jpg" alt="피트니스" style="width:100%; border-radius:6px; object-fit:cover;">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <img src="20250512_유엔사부지 오피스텔 어매니티_실내투시도_Lounge_01.jpg" alt="라운지 2" style="width:100%; border-radius:6px; object-fit:cover;">
+        <img src="20250514_유엔사부지 오피스텔_Screen Golf_02.jpg" alt="스크린 골프" style="width:100%; border-radius:6px; object-fit:cover;">
+      </div>
+
+      <!-- 마켓 이미지들 -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
         <img src="Market_01.jpg" alt="Market_01" style="width:100%; border-radius:6px; object-fit:cover;">
         <img src="Market_02.jpg" alt="Market_02" style="width:100%; border-radius:6px; object-fit:cover;">
       </div>
-      <div class="gallery" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
         <img src="Market_03.jpg" alt="Market_03" style="width:100%; border-radius:6px; object-fit:cover;">
         <img src="Market_04.jpg" alt="Market_04" style="width:100%; border-radius:6px; object-fit:cover;">
       </div>
