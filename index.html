@@ -29,7 +29,11 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
   
   <title>용산 하이엔드 오피스텔 더파크사이드 스위트 | 신세계 프리미엄 혜택</title>
   <meta name="description" content="용산공원의 영구 조망과 신세계백화점 호재를 품은 하이엔드 라이프.">
-<meta property="og:type" content="website">
+  
+  <!-- ★ 모바일 최적화 필수 태그 (화면 비율 맞춤) ★ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.theparksideyongsan.com/">
   <meta property="og:title" content="용산공원 뷰에 신세계의 가치까지 | 더파크사이드 스위트">
   <meta property="og:description" content="용산공원의 영구 조망과 신세계백화점 호재를 품은 하이엔드 라이프.">
@@ -48,13 +52,11 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       -webkit-touch-callout: none;
     }
 
-    /* 모든 이미지와 비디오 마우스 이벤트 원천 차단 */
     img, video {
       pointer-events: none !important;
       -webkit-user-drag: none;
     }
 
-    /* 모든 이미지 부모 영역에 투명 방패 레이어 적용 (크롬, 엣지, 웨일 공통 방어) */
     .gallery, .gallery-tall, .gallery-side, .gallery-full, .hero-content .logo-wrap, header .logo {
       position: relative;
     }
@@ -69,13 +71,11 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       background: transparent;
     }
 
-    /* 기본(PC 화면) 로고 크기 */
     header .logo img {
       height: 110px !important; 
       width: auto;
     }
 
-    /* 평범하고 깔끔한 고딕체 기반 전화번호 버튼 */
     .btn-call-highlight {
       display: inline-flex;
       align-items: center;
@@ -100,7 +100,6 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       background: linear-gradient(135deg, #ebd091 0%, #dfbc7c 50%, #b38e53 100%);
     }
 
-    /* 하단 CTA 섹션 전화번호 고딕체 대형 배너 */
     .cta-phone-large {
       display: inline-block;
       font-family: 'Noto Sans KR', sans-serif;
@@ -119,7 +118,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       opacity: 0.85;
     }
 
-    /* 플로팅 2단 카드 배너 스타일 (하이엔드 베이지/브라운 톤 적용) */
+    /* 플로팅 배너 스타일 */
     .floating-banner-container {
       position: fixed;
       bottom: 30px;
@@ -166,88 +165,82 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       padding: 5px;
       line-height: 1;
     }
-    .banner-close-btn:hover {
-      color: #4a3b32;
-    }
-    .banner-subtitle {
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      color: #8c7a6b;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .banner-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: #4a3b32;
-      line-height: 1.3;
-    }
-    .banner-desc {
-      font-size: 12px;
-      color: #6e5d52;
-      margin-top: 6px;
-    }
 
-    /* 관심고객 등록 영역 닫기(X) 버튼 스타일 추가 */
-    .interest-form-container {
+    /* ★ 하단 고정형 폼 축소 및 어두운 테마 스타일 적용 ★ */
+    #interestSection {
+      max-width: 600px; /* 전체 폼 가로폭 축소 */
+      margin: 0 auto 60px auto; /* 가운데 정렬 및 하단 여백 */
+      padding: 35px 25px;
+      background: #151515; /* 하단 톤에 맞춘 어두운 배경 */
+      border-radius: 12px;
+      border: 1px solid #333;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
       position: relative;
     }
-    .form-close-btn {
-      position: absolute;
-      top: 25px;
-      right: 25px;
-      font-size: 26px;
-      color: #8c7a6b;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 30;
-      transition: color 0.2s;
+    /* 하단에 고정배치되므로 닫기(X) 버튼 숨김 처리 */
+    .form-close-btn { display: none; }
+    
+    #interestSection .form-header h2 { font-size: 1.5rem; color: #dfbc7c; margin-bottom: 5px; }
+    #interestSection .form-header .sub-title { font-size: 1rem; color: #fff; margin-bottom: 10px; }
+    #interestSection .form-header p { font-size: 0.85rem; color: #888; }
+    
+    #interestSection label { font-size: 0.85rem; color: #ccc; }
+    #interestSection input[type="text"], 
+    #interestSection input[type="tel"], 
+    #interestSection select {
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-top: 5px;
     }
-    .form-close-btn:hover {
-      color: var(--gold);
+    #interestSection .btn-submit {
+      background: linear-gradient(135deg, #dfbc7c 0%, #c9a66b 50%, #9e7b43 100%);
+      color: #111;
+      font-weight: bold;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 1.05rem;
+      margin-top: 15px;
+      cursor: pointer;
     }
 
-    /* 모바일 화면(768px 이하) 최적화 설정 */
+    /* 모바일 최적화 및 폼 간격 정리 */
     @media (max-width: 768px) {
-      header .logo img {
-        height: 38px !important; 
-      }
+      header .logo img { height: 38px !important; }
       .btn-call-highlight {
         font-size: 0.9rem !important;
         padding: 6px 14px !important;
       }
       .floating-banner-container {
-        height: 130px;
-        bottom: 20px;
+        height: auto;
+        bottom: 15px;
         gap: 10px;
         width: 95%;
+        flex-direction: row;
       }
-      .banner-title {
-        font-size: 15px;
+      .banner-card { padding: 10px; }
+      .banner-title { font-size: 13px; }
+      .banner-subtitle { font-size: 9px; }
+      .banner-desc { font-size: 11px; }
+      
+      .gallery {
+        display: flex;
+        flex-direction: column; /* 갤러리 모바일 세로정렬 */
+        gap: 10px;
       }
-      .banner-subtitle {
-        font-size: 9px;
-      }
-      .banner-desc {
-        font-size: 11px;
-      }
-      .form-close-btn {
-        top: 15px;
-        right: 15px;
-        font-size: 22px;
-      }
-      .premium-title br,
-      .summary h2 br,
-      .hero-content p br,
-      .sec-premium .main-title br {
-        display: inline;
-      }
-      .premium-title br::after,
-      .summary h2 br::after,
-      .hero-content p br::after,
-      .sec-premium .main-title br::after {
-        content: " ";
+
+      /* 모바일 환경에서 폼 크기 조절 */
+      #interestSection {
+        width: 90%;
+        margin: 20px auto 80px auto;
+        padding: 25px 20px;
       }
     }
   </style>
@@ -437,100 +430,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
-<div class="interest-form-container" id="interestSection">
-    <!-- 관심고객 등록창 닫기(X) 버튼 -->
-    <button type="button" class="form-close-btn" onclick="closeInterestSection(event)" title="닫기">&times;</button>
-
-    <div class="form-header">
-        <h2>INTERESTED CUSTOMER</h2>
-        <span class="sub-title">관심고객 등록</span>
-        <p>더파크사이드 서울의 특별한 가치를 가장 먼저 만나보세요.</p>
-    </div>
-    
-    <form id="interestForm" action="https://script.google.com/macros/s/AKfycbwlX7EBM1qx9DLNR-1sGgPu1y7TIYh_B65yK5ctV6TINlAVLoTmFkUuEgv2rdYpji8a/exec" method="POST" class="interest-form" style="position:relative; z-index:20;">
-        <!-- 성명 -->
-        <div class="form-group">
-            <label for="name">성명 <span class="required">*</span></label>
-            <input type="text" id="name" name="name" placeholder="성함을 입력해주세요" required>
-        </div>
-
-        <!-- 연락처 -->
-        <div class="form-group">
-            <label for="phone">연락처 <span class="required">*</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="'-' 없이 번호만 입력해주세요" required>
-        </div>
-
-        <!-- 주소 (시/도, 구/군) -->
-        <div class="form-group">
-            <label>주소 (거주지) <span class="required">*</span></label>
-            <div class="address-group">
-                <select name="city" required>
-                    <option value="">시/도 선택</option>
-                    <option value="서울">서울특별시</option>
-                    <option value="경기">경기도</option>
-                    <option value="인천">인천광역시</option>
-                    <option value="부산">부산광역시</option>
-                    <option value="대구">대구광역시</option>
-                    <option value="광주">광주광역시</option>
-                    <option value="대전">대전광역시</option>
-                    <option value="울산">울산광역시</option>
-                    <option value="세종">세종특별자치시</option>
-                    <option value="강원">강원특별자치도</option>
-                    <option value="충북">충청북도</option>
-                    <option value="충남">충청남도</option>
-                    <option value="전북">전북특별자치도</option>
-                    <option value="전남">전라남도</option>
-                    <option value="경북">경상북도</option>
-                    <option value="경남">경상남도</option>
-                    <option value="제주">제주특별자치도</option>
-                </select>
-                <input type="text" name="district" placeholder="구/군을 입력해주세요 (예: 강남구)" required>
-            </div>
-        </div>
-
-        <!-- 성별 -->
-        <div class="form-group">
-            <label>성별</label>
-            <div class="radio-group">
-                <label><input type="radio" name="gender" value="남성" checked> 남성</label>
-                <label><input type="radio" name="gender" value="여성"> 여성</label>
-            </div>
-        </div>
-
-        <!-- 연령 -->
-        <div class="form-group">
-            <label>연령대</label>
-            <select name="age_group">
-                <option value="">연령대를 선택해주세요</option>
-                <option value="20대">20대</option>
-                <option value="30대">30대</option>
-                <option value="40대">40대</option>
-                <option value="50대">50대</option>
-                <option value="60대">60대</option>
-                <option value="70대이상">70대 이상</option>
-            </select>
-        </div>
-
-        <!-- 개인정보 수집 동의 -->
-        <div class="form-group checkbox-group">
-            <label>
-                <input type="checkbox" name="privacy_agreed" required> 
-                [필수] 개인정보 수집 및 이용에 동의합니다.
-            </label>
-        </div>
-
-        <!-- 제출 버튼 -->
-        <button type="submit" id="submitBtn" class="btn-submit">관심고객 등록하기</button>
-    </form>
-
-    <!-- 완료 시 나타나는 메시지 박스 -->
-    <div id="successMessage" style="display: none; text-align: center; padding: 40px 0; position:relative; z-index:20;">
-        <h3 style="color: var(--gold); font-size: 1.8rem; margin-bottom: 15px;">등록이 완료되었습니다!</h3>
-        <p style="color: #aaa; font-size: 1rem;">더파크사이드 서울의 소식을 빠르게 전해드리겠습니다.</p>
-        <button type="button" onclick="location.reload()" class="btn-submit" style="margin-top: 25px; width: auto; padding: 10px 30px;">확인</button>
-    </div>
-</div>
-
 <section class="features">
   <div class="features-grid">
     <div class="feat">
@@ -552,7 +451,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="cta" id="contact">
+<!-- ★ 전화상담(CTA) 영역 아래로 폼 이동 완료 ★ -->
+<section class="cta" id="contact" style="padding-bottom: 20px;">
   <h2>더파크사이드 스위트를<br>소유한다는 것은</h2>
   <p>새롭게 창조되는 서울의 중심이자<br>하나의 유니버스를 온전히 내 것으로 만드는 것입니다.</p>
   <a href="tel:1800-1887" class="cta-phone-large">1800-1887</a>
@@ -561,7 +461,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<footer>
+<!-- ★ 관심고객 등록 영역 (축소 & 하단 배치) ★ -->
+<div class="interest-form-container" id="interestSection">
+    <button type="button" class="form-close-btn">&times;</button>
+    <div class="form-header">
+        <h2>INTERESTED CUSTOMER</h2>
+        <span class="sub-title">관심고객 등록</span>
+        <p>더파크사이드 서울의 특별한 가치를 가장 먼저 만나보세요.</p>
+    </div>
+    
+    <form id="interestForm" action="https://script.google.com/macros/s/AKfycbwlX7EBM1qx9DLNR-1sGgPu1y7TIYh_B65yK5ctV6TINlAVLoTmFkUuEgv2rdYpji8a/exec" method="POST" class="interest-form" style="position:relative; z-index:20;">
+        <!-- 성명 -->
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="name">성명 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="성함을 입력해주세요" required>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="phone">연락처 <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="'-' 없이 번호만 입력해주세요" required>
+        </div>
+
+        <!-- 주소 (시/도, 구/군) -->
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label>주소 (거주지) <span class="required">*</span></label>
+            <div class="address-group" style="display:flex; gap:10px;">
+                <select name="city" required style="width: 40%;">
+                    <option value="">시/도 선택</option>
+                    <option value="서울">서울특별시</option>
+                    <option value="경기">경기도</option>
+                    <option value="기타">기타 지역</option>
+                </select>
+                <input type="text" name="district" placeholder="구/군을 입력해주세요 (예: 강남구)" required style="width: 60%;">
+            </div>
+        </div>
+
+        <!-- 성별 -->
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label>성별</label>
+            <div class="radio-group" style="margin-top:5px; color:#fff; font-size:0.9rem;">
+                <label style="margin-right:15px;"><input type="radio" name="gender" value="남성" checked> 남성</label>
+                <label><input type="radio" name="gender" value="여성"> 여성</label>
+            </div>
+        </div>
+
+        <!-- 연령 -->
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label>연령대</label>
+            <select name="age_group">
+                <option value="">연령대를 선택해주세요</option>
+                <option value="20대">20대</option>
+                <option value="30대">30대</option>
+                <option value="40대">40대</option>
+                <option value="50대">50대</option>
+                <option value="60대">60대</option>
+                <option value="70대이상">70대 이상</option>
+            </select>
+        </div>
+
+        <!-- 개인정보 수집 동의 -->
+        <div class="form-group checkbox-group" style="margin-top: 20px; margin-bottom: 15px;">
+            <label style="color: #fff; font-size: 0.9rem;">
+                <input type="checkbox" name="privacy_agreed" required> 
+                [필수] 개인정보 수집 및 이용에 동의합니다.
+            </label>
+        </div>
+
+        <!-- 제출 버튼 -->
+        <button type="submit" id="submitBtn" class="btn-submit">관심고객 등록하기</button>
+    </form>
+
+    <!-- 완료 시 나타나는 메시지 박스 -->
+    <div id="successMessage" style="display: none; text-align: center; padding: 40px 0; position:relative; z-index:20;">
+        <h3 style="color: var(--gold); font-size: 1.5rem; margin-bottom: 15px;">등록이 완료되었습니다!</h3>
+        <p style="color: #aaa; font-size: 0.9rem;">더파크사이드 서울의 소식을 빠르게 전해드리겠습니다.</p>
+        <button type="button" onclick="location.reload()" class="btn-submit" style="margin-top: 25px; width: auto; padding: 10px 30px;">확인</button>
+    </div>
+</div>
+
+<footer style="margin-bottom: 30px;"> <!-- 배너 공간 확보를 위해 여백 추가 -->
   <div class="company">
     가디스 주식회사<br>
     사업자등록번호 : 350-86-03828 · 대표자 : 정현영<br>
@@ -575,7 +554,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- 하단 플로팅 2단 배너 영역 -->
 <div class="floating-banner-container" id="floatingBanner">
-    <!-- 1번 카드: 중도금 무이자 (X 버튼 및 카드 전체 클릭 시 닫힘) -->
+    <!-- 1번 카드: 중도금 무이자 -->
     <div class="banner-card" id="bannerCard1" onclick="dismissBanner('bannerCard1', event)">
         <button type="button" class="banner-close-btn" onclick="dismissBanner('bannerCard1', event)" title="닫기">&times;</button>
         <div class="banner-subtitle">THE PARKSIDE SUITES</div>
@@ -583,7 +562,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="banner-desc">(클릭 시 배너가 닫힙니다)</div>
     </div>
 
-    <!-- 2번 카드: 관심고객 등록 안내 (X 버튼으로 닫기 가능 + 본문 카드 클릭 시 폼으로 이동) -->
+    <!-- 2번 카드: 관심고객 등록 안내 (클릭 시 폼으로 스크롤 이동) -->
     <div class="banner-card" id="bannerCard2" onclick="scrollToForm(event)">
         <button type="button" class="banner-close-btn" onclick="dismissBanner('bannerCard2', event)" title="닫기">&times;</button>
         <div class="banner-subtitle">THE PARKSIDE SUITES REGISTER</div>
@@ -607,34 +586,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     }
 
-    // 관심고객 등록 영역으로 부드럽게 스크롤 이동
+    // 관심고객 등록 폼(맨 아래)으로 부드럽게 스크롤 이동
     function scrollToForm(event) {
-        // 만약 닫기 버튼을 누른 게 아니라면 스크롤 실행
         if(event && event.target.classList.contains('banner-close-btn')) return;
         const formContainer = document.getElementById('interestSection');
         if(formContainer) {
-            formContainer.style.display = 'block'; 
-            formContainer.style.opacity = '1';
-            formContainer.style.transform = 'scale(1)';
-            formContainer.scrollIntoView({ behavior: 'smooth' });
+            formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     }
 
-    // 관심고객 등록 섹션 닫기 기능
-    function closeInterestSection(event) {
-        if(event) event.stopPropagation();
-        const section = document.getElementById('interestSection');
-        if(section) {
-            section.style.transition = 'all 0.4s ease';
-            section.style.opacity = '0';
-            section.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                section.style.display = 'none';
-            }, 400);
-        }
-    }
-
-document.getElementById('interestForm').addEventListener('submit', function(e) {
+    document.getElementById('interestForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
         var form = this;
