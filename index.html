@@ -190,12 +190,13 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       margin-top: 4px;
     }
 
-    /* 거시/미시 커스텀 섹션 텍스트 가독성 완벽 보정 */
-    .sec-macro, .sec-micro {
+    /* 거시/풍수/미시 커스텀 섹션 */
+    .sec-macro, .sec-geomancy, .sec-micro {
       padding: 90px 20px;
       text-align: center;
     }
     .sec-macro { background-color: #151515; color: #fff; border-bottom: 1px solid #222; }
+    .sec-geomancy { background-color: #181818; color: #fff; border-bottom: 1px solid #222; }
     .sec-micro { background-color: #1a1a1a; color: #fff; border-top: 1px solid #222; border-bottom: 1px solid #222; }
     
     .section-badge {
@@ -259,7 +260,6 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       box-shadow: 0 10px 40px rgba(0,0,0,0.8);
       position: relative;
     }
-    .form-close-btn { display: none; }
     
     #interestSection .form-header h2 { font-size: 1.5rem; color: #dfbc7c; margin-bottom: 5px; }
     #interestSection .form-header .sub-title { font-size: 1rem; color: #fff; margin-bottom: 10px; }
@@ -328,7 +328,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
         gap: 12px;
       }
 
-      .sec-macro, .sec-micro { padding: 50px 15px; }
+      .sec-macro, .sec-geomancy, .sec-micro { padding: 50px 15px; }
       .highlight-title { font-size: 1.45rem; line-height: 1.35; }
       .desc-text { font-size: 0.95rem; line-height: 1.6; }
 
@@ -368,7 +368,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#signature" class="btn-gold">SIGNATURE 살펴보기</a>
       <a href="tel:1800-1887" class="btn-line">갤러리 투어 예약</a>
     </div>
-<div class="hero-partners-single" style="margin-top: 30px;">
+    <div class="hero-partners-single" style="margin-top: 30px;">
       <img src="logos.png" alt="파트너 로고" style="height: 32px;">
     </div>
   </div>
@@ -384,6 +384,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       주거, 휴식, 문화, 예술, 비즈니스가 경계 없이 유기적으로 연결된 선진국형 복합용도개발(MXD) 단지로서, 
       서울의 문화적 심장이 될 '더파크사이드 유니버스'를 창조합니다.
     </p>
+  </div>
+</section>
+
+<!-- ★ 풍수지리 / 천하명당 섹션 (wind.jpg & parkjun.png 완벽 연동) ★ -->
+<section class="sec-geomancy">
+  <div class="container">
+    <span class="section-badge">GEOMANCY</span>
+    <h2 class="highlight-title">그 누구도 이의를 제기할 수 없는 천하 명당</h2>
+    <p class="desc-text">
+      유엔사 부지는 대동여지도 등의 고지도를 통해 살펴보면 산맥의 생기가 응집되어 모이는 길지로 볼 수 있습니다. 
+      남산을 주산으로 약수동과 매봉산을 돌아 이태원으로 내려가는 능선인 좌청룡 아래에 위치, 
+      그 생기를 머금어 한강을 득수하며 멈춰선 명당의 조건을 충분히 갖추고 있는 자리인 것입니다. 
+      현대사회는 물의 속성과 같은 흐름과 유동의 성질이 강조되는 개방화, 세계화의 시대입니다. 
+      유엔사 부지의 가치는 그 응집되는 에너지와 더불어 앞으로 크게 왕성해질 것입니다.
+    </p>
+
+    <!-- 풍수 전문가 메시지 박스 (parkjun.png 적용) -->
+    <div style="background: #222; border: 1px solid #333; border-radius: 8px; padding: 35px 25px; max-width: 700px; margin: 0 auto 40px auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+      <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; border: 2px solid #dfbc7c;">
+        <img src="parkjun.png" alt="풍수연구가 박성준" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <p style="color: #dfbc7c; font-size: 1.05rem; line-height: 1.6; margin: 0; word-break: keep-all;">
+        "한강을 얻어 그 생기를 받고 에너지가 응집되어 비로소 재물을 늘려주는 물을 품고 있는 모양새입니다. 
+        바뀐 세상의 섭리를 담아 풍요와 안정의 핵심 축으로 도약할 수 있는 열린 땅인 셈입니다."
+      </p>
+      <div style="font-size: 0.9rem; color: #888;">풍수연구가 <strong style="color:#fff;">박성준</strong></div>
+    </div>
+
+    <!-- 고지도 이미지 영역 (wind.jpg 적용) -->
+    <div class="gallery-full" style="max-width: 900px; margin: 0 auto;">
+      <img src="wind.jpg" alt="수선전도 고지도 명당 분석" style="width:100%; border-radius:6px; border:1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    </div>
   </div>
 </section>
 
@@ -646,17 +678,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<!-- 하단 플로팅 2단 배너 영역 (왼쪽: 중도금 무이자 + 시행사 보유분 / 오른쪽: 관심고객 등록 스크롤) -->
+<!-- 하단 플로팅 2단 배너 영역 -->
 <div class="floating-banner-container" id="floatingBanner">
-    <!-- 왼쪽 카드: 중도금 무이자 & 시행사 보유분 특별분양 통합 -->
     <div class="banner-card" id="bannerCard1" onclick="dismissBanner('bannerCard1', event)">
         <button type="button" class="banner-close-btn" onclick="dismissBanner('bannerCard1', event)" title="닫기">&times;</button>
         <div class="banner-subtitle">SPECIAL OFFER</div>
         <div class="banner-title">중도금 무이자<br>시행사 보유분 특별분양</div>
         <div class="banner-desc">(클릭 시 배너가 닫힙니다)</div>
     </div>
-    
-    <!-- 오른쪽 카드: 기존과 동일한 관심고객 등록(갤러리 예약) 스크롤 유도 -->
     <div class="banner-card" id="bannerCard2" onclick="scrollToForm(event)">
         <button type="button" class="banner-close-btn" onclick="dismissBanner('bannerCard2', event)" title="닫기">&times;</button>
         <div class="banner-subtitle">VIP INVITATION</div>
