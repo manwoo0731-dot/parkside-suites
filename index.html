@@ -188,14 +188,18 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       margin-top: 4px;
     }
 
-    /* 거시/미시 커스텀 섹션 텍스트 가독성 완벽 보정 */
-    .sec-macro, .sec-micro {
-      padding: 90px 20px;
+    /* 거시적 비전 섹션 스타일 (영상 포함) */
+    .sec-macro {
+      padding: 100px 20px;
+      background-color: #121212;
+      color: #fff;
       text-align: center;
+      border-bottom: 1px solid #222;
     }
-    .sec-macro { background-color: #151515; color: #fff; border-bottom: 1px solid #222; }
-    .sec-micro { background-color: #1a1a1a; color: #fff; border-top: 1px solid #222; border-bottom: 1px solid #222; }
-    
+    .sec-macro .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
     .section-badge {
       font-size: 0.85rem;
       letter-spacing: 0.2em;
@@ -208,16 +212,47 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       font-size: 2.2rem;
       font-weight: 700;
       line-height: 1.4;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       color: #ffffff !important;
     }
     .desc-text {
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #cccccc !important;
-      max-width: 700px;
-      margin: 0 auto 40px auto;
+      margin-bottom: 40px;
     }
+    
+    /* 비디오 래퍼 스타일 */
+    .macro-video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 비율 */
+      height: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      border: 1px solid #333;
+    }
+    .macro-video-wrap video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 미시적 섹션 및 기타 스타일 */
+    .sec-micro {
+      padding: 90px 20px;
+      background-color: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+    .sec-micro .highlight-title { color: #ffffff !important; }
+    .sec-micro .desc-text { color: #cccccc !important; max-width: 700px; margin: 0 auto 40px auto; }
 
     .service-grid {
       display: grid;
@@ -243,7 +278,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       line-height: 1.5;
     }
 
-    /* 하단 고정 폼 (어두운 테마) */
+    /* 하단 고정 폼 */
     #interestSection {
       max-width: 600px; 
       margin: 40px auto 60px auto; 
@@ -258,7 +293,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
     
     #interestSection .form-header h2 { font-size: 1.5rem; color: #dfbc7c; margin-bottom: 5px; }
     #interestSection .form-header .sub-title { font-size: 1rem; color: #fff; margin-bottom: 10px; }
-    #interestSection .form-header p { font-size: 0.85rem; color: #aaa; }
+    #interestSection .form-header p { font-size: 0.85rem; color: #888; }
     
     #interestSection label { font-size: 0.85rem; color: #ccc; }
     #interestSection input[type="text"], 
@@ -287,7 +322,7 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       cursor: pointer;
     }
 
-    /* 기본 섹션 타이틀 및 본문 글씨 가독성 강제 보정 */
+    /* 기본 섹션 타이틀 및 본문 글씨 가독성 보정 */
     .premium-title, .summary h2, .sec-premium .main-title, .features h3 {
       color: #ffffff !important;
     }
@@ -366,16 +401,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- 거시적 비전 섹션 -->
+<!-- ★ 프리미엄 바로 위: 거시적 비전 및 브랜드 필름(영상) 섹션 배치 ★ -->
 <section class="sec-macro">
   <div class="container">
-    <span class="section-badge">CREATE THE CENTER OF SEOUL</span>
-    <h2 class="highlight-title">단순한 부촌을 넘어선 독보적인 세계,<br>유엔사 부지에 세워지는 서울의 새로운 중심</h2>
+    <span class="section-badge">THE PARKSIDE UNIVERSE</span>
+    <h2 class="highlight-title">단순한 부촌이 아닌 독보적인 세계의 창조,<br>용산 유엔사 부지에 세워지는 서울의 새로운 중심</h2>
     <p class="desc-text">
-      용산구 이태원동 유엔사 부지. 이곳은 단순한 주거를 짓는 것이 아닙니다.<br>
-      주거, 휴식, 문화, 예술, 비즈니스가 경계 없이 유기적으로 연결된 선진국형 복합용도개발(MXD) 단지로서,<br>
-      서울의 문화적 심장이 될 '더파크사이드 유니버스'를 창조합니다.
+      용산구 이태원동 유엔사 부지. 우리는 이 땅에 건물을 짓는 것이 아닙니다. 서울의 중심을 세우는 것입니다[cite: 1].<br>
+      주거, 휴식, 문화, 예술, 비즈니스가 경계 없이 유기적으로 연결된 선진국형 복합용도개발(MXD) 단지로서<br>
+      서울의 문화적 심장이 될 '더파크사이드 유니버스'를 창조합니다[cite: 1].
     </p>
+    
+    <!-- 공식 브랜드 필름 영상 연동 -->
+    <div class="macro-video-wrap">
+      <video autoplay muted loop playsinline>
+        <source src="https://player.vimeo.com/progressive_redirect/playback/1109232658/rendition/720p/file.mp4?loc=external&signature=4d90c89dbab7d7014c10872b664ad1dd574cf1646de5200fe15a4833e7e7f59d" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 
@@ -426,9 +468,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       330m의 더파크사이드 웨이 (THE PARKSIDE WAY)
     </h2>
     <p class="premium-desc">
-      단지 중앙을 가로지르는 330m의 보행자 거리는 용산공원과 이태원을 잇는 새로운 문화 축입니다.<br>
+      단지 중앙을 가로지르는 330m의 보행자 거리는 용산공원과 이태원을 잇는 새로운 문화 축입니다[cite: 1].<br>
       해외 유명 갤러리와 복합 공연장이 들어서며, 럭셔리 라이프스타일 샵들로 활기가 넘치는<br>
-      예술과 문화의 중심(Art & Culture Space)을 일상에서 누릴 수 있습니다.
+      예술과 문화의 중심(Art & Culture Space)을 일상에서 누릴 수 있습니다[cite: 1].
     </p>
     <div class="gallery-full">
       <img src="img3_web.jpg" alt="더파크사이드 웨이 광장" style="width:100%; max-height:none; object-fit:cover;">
@@ -477,9 +519,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       울트라 럭셔리 호텔 로즈우드 서울
     </h2>
     <p class="premium-desc">
-      글로벌 럭셔리 라이프스타일 기업 Rosewood의 국내 최초 진출.<br>
-      로즈우드 서울이 직접 운영하는 '더파크사이드클럽'은 각 지역의 고유한 문화를 담아내는 철학을 바탕으로<br>
-      더파크사이드 스위트 거주자에게 세심하고 특별한 맞춤형 서비스를 제공합니다.
+      글로벌 럭셔리 라이프스타일 기업 Rosewood의 국내 최초 진출[cite: 1].<br>
+      로즈우드 서울이 직접 운영하는 '더파크사이드클럽'은 각 지역의 고유한 문화를 담아내는 철학을 바탕으로[cite: 1]<br>
+      더파크사이드 스위트 거주자에게 세심하고 특별한 맞춤형 서비스를 제공합니다[cite: 1].
     </p>
     
     <div class="gallery-full" style="margin-bottom: 40px;">
@@ -555,15 +597,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="features-grid">
     <div class="feat">
       <h3>The Parkside Universe</h3>
-      <p>주거, 호텔, 리테일, 오피스, 문화가 응집된 선진국형 복합용도개발(MXD) 단지.</p>
+      <p>주거, 호텔, 리테일, 오피스, 문화가 응집된 선진국형 복합용도개발(MXD) 단지[cite: 1].</p>
     </div>
     <div class="feat">
       <h3>The Parkside Way</h3>
-      <p>용산공원과 이태원을 잇는 330m 보행자 거리. 유명 갤러리와 복합 공연장의 아트 스페이스.</p>
+      <p>용산공원과 이태원을 잇는 330m 보행자 거리. 유명 갤러리와 복합 공연장의 아트 스페이스[cite: 1].</p>
     </div>
     <div class="feat">
       <h3>Rosewood Seoul</h3>
-      <p>국내 최초 진출. A Sense of Place® 철학을 바탕으로 한 울트라 럭셔리 호텔과 컨시어지.</p>
+      <p>국내 최초 진출. A Sense of Place® 철학을 바탕으로 한 울트라 럭셔리 호텔과 컨시어지[cite: 1].</p>
     </div>
     <div class="feat">
       <h3>The Parkside Mall</h3>
