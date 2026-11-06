@@ -56,7 +56,6 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       padding: 0;
       word-break: keep-all;
       word-wrap: break-word;
-      scroll-behavior: smooth; /* 부드러운 스크롤 효과 */
     }
 
     img, video {
@@ -123,6 +122,56 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
     }
     .cta-phone-large:hover {
       opacity: 0.85;
+    }
+
+    /* 유튜브 팝업 모달 스타일 */
+    #videoModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 99999;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .modal-content-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      background: #111;
+      border: 1px solid #dfbc7c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #dfbc7c;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 10;
+      line-height: 1;
+    }
+    .video-container-popup {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 비율 */
+    }
+    .video-container-popup iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     /* 플로팅 2단 카드 배너 */
@@ -402,7 +451,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p>또 하나의 부촌이 아닌 독보적인 세계의 창조<br>서울의 중심을 세우는 THE PARKSIDE UNIVERSE</p>
     <div class="hero-btns">
-      <a href="#signature" class="btn-gold">SIGNATURE 살펴보기</a>
+      <!-- 유튜브 팝업을 띄우는 버튼 -->
+      <button type="button" class="btn-gold" onclick="openVideoModal()">SIGNATURE 살펴보기</button>
       <a href="tel:1800-1887" class="btn-line">갤러리 투어 예약</a>
     </div>
     <div class="hero-partners-single" style="margin-top: 30px;">
@@ -411,8 +461,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- 유튜브 영상 팝업 모달 HTML -->
+<div id="videoModal" onclick="closeVideoModal(event)">
+  <div class="modal-content-wrap" onclick="event.stopPropagation()">
+    <button type="button" class="modal-close-btn" onclick="closeVideoModal()">&times;</button>
+    <div class="video-container-popup">
+      <!-- 유튜브 임베드 링크 (자동재생 설정) -->
+      <iframe id="youtubeIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
 <!-- 거시적 비전 섹션 및 메인 조감도 사진 (main111.png) - 잘림 방지 전체 출력 -->
-<section class="sec-macro" id="signature">
+<section class="sec-macro">
   <div class="container" style="max-width: 1100px; margin: 0 auto;">
     <span class="section-badge">CREATE THE CENTER OF SEOUL</span>
     <h2 class="highlight-title">단순한 부촌을 넘어선 독보적인 세계,<br>유엔사 부지에 세워지는 서울의 새로운 중심</h2>
@@ -810,6 +871,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
+    // 유튜브 팝업 모달 제어 함수
+    function openVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('youtubeIframe');
+        // 유튜브 영상 자동재생(autoplay=1) 및 음소거 해제 옵션 포함
+        iframe.src = 'https://www.youtube.com/embed/WNXGiTyUoFc?autoplay=1';
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+    }
+
+    function closeVideoModal(event) {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('youtubeIframe');
+        modal.style.display = 'none';
+        iframe.src = ''; // src를 비워야 팝업을 닫았을 때 영상 소리가 꺼짐
+        document.body.style.overflow = 'auto'; // 스크롤 복원
+    }
+
     function dismissBanner(cardId, event) {
         if(event) event.stopPropagation();
         const card = document.getElementById(cardId);
