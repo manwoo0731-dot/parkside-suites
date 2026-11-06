@@ -164,14 +164,15 @@ src="https://www.facebook.com/tr?id=1105197888835484&ev=PageView&noscript=1"
       position: relative;
       width: 100%;
       padding-top: 56.25%; /* 16:9 비율 */
+      low: hidden; /* 밖으로 튀어나가는 요소를 숨김 */
     }
     .video-container-popup iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
+  position: absolute;
+  top: -15%; /* 상단 제목 바 영역을 위로 밀어내어 가림 */
+  left: 0;
+  width: 100%;
+  height: 130%; /* 높이를 키워서 하단 '동영상 더보기'와 추천 영상을 화면 밖으로 밀어냄 */
+  border: none;
     }
 
     /* 플로팅 2단 카드 배너 */
@@ -873,12 +874,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
     // 유튜브 팝업 모달 제어 함수
     function openVideoModal() {
-        const modal = document.getElementById('videoModal');
-        const iframe = document.getElementById('youtubeIframe');
-        // 유튜브 영상 자동재생(autoplay=1) 및 음소거 해제 옵션 포함
-        iframe.src = 'https://www.youtube.com/embed/WNXGiTyUoFc?autoplay=1';
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('youtubeIframe');
+    // rel=0 (관련 동영상 표시 안 함), modestbranding=1 (유튜브 로고 최소화)
+    iframe.src = 'https://www.youtube.com/embed/WNXGiTyUoFc?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
     }
 
     function closeVideoModal(event) {
